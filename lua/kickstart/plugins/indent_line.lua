@@ -4,6 +4,19 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = {},
+    opts = {
+      indent = { highlight = {
+        'CursorColumn',
+        'Whitespace',
+      }, char = '' },
+      whitespace = {
+        highlight = {
+          'CursorColumn',
+          'Whitespace',
+        },
+        remove_blankline_trail = false,
+      },
+      scope = { enabled = false },
+    },
   },
 }
