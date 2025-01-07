@@ -62,7 +62,7 @@ return {
           local project_root = vim.fs.root(0, { '.gitignore' })
           return {
             cmd = { 'odin' },
-            args = { 'run', 'src', '-debug', '-out:bin/debug.exe' },
+            args = { 'run', 'src', '-debug', '-out:bin/debug.exe', '-collection:sokol=sokol/sokol', '-collection:libs=vendor' },
             name = 'Run',
             cwd = project_root,
             components = {
@@ -97,7 +97,7 @@ return {
           local project_root = vim.fs.root(0, { '.gitignore' })
           return {
             cmd = { 'odin' },
-            args = { 'build', 'src', '-debug', '-out:bin/debug.exe' },
+            args = { 'build', 'src', '-debug', '-sanitize:address', '-out:bin/debug.exe' },
             name = 'build',
             cwd = project_root,
             components = {
